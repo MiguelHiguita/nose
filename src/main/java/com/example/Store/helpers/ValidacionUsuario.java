@@ -1,5 +1,9 @@
 package com.example.Store.helpers;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
+
+@Component
 public class ValidacionUsuario {
     public boolean validarNombres(String nombres)throws Exception{
         if (nombres.length()==0){

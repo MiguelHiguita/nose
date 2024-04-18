@@ -1,5 +1,8 @@
 package com.example.Store.helpers;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class ValidacionTipoPrenda {
     public boolean validarNombre(String nombre)throws Exception{
         if (nombre.length()==0){

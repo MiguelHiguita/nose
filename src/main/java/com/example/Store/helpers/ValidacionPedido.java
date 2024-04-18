@@ -1,9 +1,11 @@
 package com.example.Store.helpers;
 
+import org.springframework.stereotype.Component;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-
+@Component
 public class ValidacionPedido {
     public boolean validarFechaYHora(LocalDate fechaYHora)throws Exception{
         if (fechaYHora==null){

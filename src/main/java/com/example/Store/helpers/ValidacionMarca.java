@@ -1,7 +1,9 @@
 package com.example.Store.helpers;
 
-import java.time.LocalDate;
+import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
+@Component
 public class ValidacionMarca {
     public boolean validarNombreMarca(String nombreMarca)throws Exception{
         // evaluo si el nombre coincide con la expresion
