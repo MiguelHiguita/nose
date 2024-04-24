@@ -13,7 +13,7 @@ public class ValidacionProducto {
         }
         String regex="^[a-zA-Z ]+$";
         // evaluo si el nombre coincide con la expresion
-        if (!ValidarPatron.evaluarPatron(nombre,regex)){
+        if (!ValidarPatron.evaluarPatron(regex, nombre)){
             throw new Exception("revisa el nombre ingresado ya que solo puede tener letras y espacios");
         }
         return true;

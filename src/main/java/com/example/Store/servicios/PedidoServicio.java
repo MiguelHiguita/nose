@@ -16,7 +16,7 @@ public class PedidoServicio {
 
     public Pedido guardarPedido(Pedido datosPedido) throws Exception{
         try{
-            if (!validacionPedido.validarFechaYHora(datosPedido.getFechaYHora().toLocalDate())) {
+            if (!validacionPedido.validarFechaYHora(datosPedido.getFechaYHora())) {
                 throw new Exception("Fecha/Hora incorrectas");
             }
             return pedidoRepositorio.save(datosPedido);

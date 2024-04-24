@@ -10,8 +10,8 @@ public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_pedido;
-    @Column(name = "fechaYHora",nullable = false)
-    private LocalDateTime fechaYHora; // no vacio y formato internacional
+    @Column(name = "fechaYHora",nullable = true)
+    private String fechaYHora; // no vacio y formato internacional
 
     @ManyToOne
     @JoinColumn(name="id_usuario", referencedColumnName = "id_usuario")
@@ -20,16 +20,16 @@ public class Pedido {
     public Pedido() {
     }
 
-    public Pedido(Integer id, LocalDateTime fechaYHora) {
+    public Pedido(Integer id, String fechaYHora) {
         this.id_pedido = id;
         fechaYHora = fechaYHora;
     }
 
-    public LocalDateTime getFechaYHora() {
+    public String getFechaYHora() {
         return fechaYHora;
     }
 
-    public void setFechaYHora(LocalDateTime fechaYHora) {
+    public void setFechaYHora(String fechaYHora) {
         this.fechaYHora = fechaYHora;
     }
 }

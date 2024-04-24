@@ -7,25 +7,15 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 @Component
 public class ValidacionPedido {
-    public boolean validarFechaYHora(LocalDate fechaYHora)throws Exception{
-        if (fechaYHora==null){
-            throw new Exception("la fecha no puede estar vacia");
+
+        public boolean validarFechaYHora(String fechayhora)throws Exception{
+        String regex = "^\\d{2}/\\d{2}/\\d{4}$";
+        if (!ValidarPatron.evaluarPatron(regex, fechayhora)){
+            throw new Exception("Revisa la fecha y hora (dia/mes/año)");
         }
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd"); // Formato deseado
-        String fechaString = fechaYHora.toString(); // Convertir LocalDate a String
-
-        try {
-            LocalDate parsedDate = LocalDate.parse(fechaString, formatter);
-            // Si la fecha analizada es igual a la fecha original, entonces está en el formato deseado
-            if (parsedDate.equals(fechaYHora)) {
-                return true;
-            } else {
-                throw new Exception("La fecha no está en el formato deseado.");
-            }
-        } catch (DateTimeParseException e) {
-            throw new Exception("Error al analizar la fecha.");
-        }
-
+        return true;
     }
+
 }
+

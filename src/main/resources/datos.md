@@ -21,11 +21,18 @@ TipoPrenda modelo:
 
 Producto modelo:
 {
-"nombreProducto": "",
-"referencia": "",
-"talla": "",
-"cantidadBodega": "",
-"precioUnitario": "",
-"descripcion": "",
-"fotografia": "",
+"nombreProducto": "celular",
+"referencia": "aasd21231s",
+"talla": "XXL",
+"cantidadBodega": "123",
+"precioUnitario": "100000",
+"descripcion": "telefono inteligente",
+"fotografia": "asjhdjkashdkjhasjdhaskjdhakshjd"
 }
+
+Pedido modelo:
+{
+"fechaYHora": "24/12/2024"
+}
+
+Marca modelo:

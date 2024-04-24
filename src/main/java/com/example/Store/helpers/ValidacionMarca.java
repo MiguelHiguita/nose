@@ -21,7 +21,7 @@ public class ValidacionMarca {
 
     public boolean validarNit(String nit)throws Exception{
         String regex = "^[0-9]+$";
-        if (!ValidarPatron.evaluarPatron(nit,regex)){
+        if (!ValidarPatron.evaluarPatron(regex,nit)){
             throw new Exception("El nit ingresado solo puede tener numeros");
         }
         if (nit.length()==0){
