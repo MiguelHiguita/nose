@@ -12,3 +12,20 @@ Usuario modelo:
 "municipio": "Envigado",
 "codigoPostal": "00535"
 }
+
+
+TipoPrenda modelo:
+{
+"nombre": "Pantalon"
+}
+
+Producto modelo:
+{
+"nombreProducto": "",
+"referencia": "",
+"talla": "",
+"cantidadBodega": "",
+"precioUnitario": "",
+"descripcion": "",
+"fotografia": "",
+}

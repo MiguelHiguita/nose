@@ -13,8 +13,7 @@ public class ValidacionUsuario {
             throw new Exception("El nombre no puede tener mas de 50 caracteres");
         }
         String regex="^[a-zA-Z ]+$";
-        // evaluo si el nombre coincide con la expresion
-        if (!ValidarPatron.evaluarPatron(nombres,regex)){
+        if (!ValidarPatron.evaluarPatron(regex,nombres)){
             throw new Exception("revisa el nombre ingresado ya que solo puede tener letras y espacios");
         }
         return true;
@@ -28,13 +27,13 @@ public class ValidacionUsuario {
         }
         String regex = "^[0-9]+$";
         if (!ValidarPatron.evaluarPatron(regex,cedula)){
-            throw new Exception("El nit ingresado solo puede tener numeros");
+            throw new Exception("La Cedula ingresada solo puede tener numeros");
         }
         return true;
     }
     public boolean validarCorreo(String correo)throws Exception{
         String regex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
-        if (!ValidarPatron.evaluarPatron(correo,regex)){
+        if (!ValidarPatron.evaluarPatron(regex,correo)){
             throw new Exception("correo no cumple con el formato adecuado");
         }
         if (correo.length()==0){
@@ -50,7 +49,7 @@ public class ValidacionUsuario {
         if (sexo.length()>1){
             throw new Exception("la longitud del sexo no puede ser mayor a 1");
         }
-        if (!sexo.toLowerCase().equals("m") || !sexo.toLowerCase().equals("f")){
+        if (!sexo.toLowerCase().equals("m") && !sexo.toLowerCase().equals("f")){
             throw new Exception("el valor del sexo solo puede ser m o f");
         }
         return true;
