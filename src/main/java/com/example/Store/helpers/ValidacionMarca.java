@@ -34,11 +34,11 @@ public class ValidacionMarca {
         return true;
     }
 
-    public boolean validarAno(LocalDate ano)throws Exception{
-        if (ano==null){
-            throw new Exception("la fecha no puede estar vacia");
-        }
-
-        return true;
+    public boolean validarAno(String ano)throws Exception{
+    String regex = "^\\d{2}/\\d{2}/\\d{4}$";
+    if (!ValidarPatron.evaluarPatron(regex, ano)){
+        throw new Exception("Revisa la fecha y hora (dia/mes/año)");
+    }
+    return true;
     }
 }

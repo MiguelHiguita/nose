@@ -2,9 +2,6 @@ package com.example.Store.modelos;
 
 import jakarta.persistence.*;
 
-import java.awt.*;
-import java.time.LocalDate;
-
 @Entity
 @Table(name = "marcas")
 
@@ -12,24 +9,24 @@ public class Marca {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_marca;
-    @Column(name = "nombreMarca",nullable = false, length = 50)
+    @Column(name = "nombreMarca",nullable = false)
     private String nombreMarca; // no vacio obligario y maximo 50
-    @Column(name = "nit",nullable = false, length = 20)
+    @Column(name = "nit",nullable = false)
     private String nit; //  solo numeros y maximo 10
     @Column(name = "anoCreacion",nullable = true)
-    private LocalDate anoCreacion;// obligario
-    @Column(name = "sedePrincipal",nullable = true, length = 30)
+    private String anoCreacion;// obligario
+    @Column(name = "sedePrincipal",nullable = true)
     private String sedePrincipal; // no se valida
 
     public Marca() {
     }
 
-    public Marca(Integer id, String nombreMarca, String nit, LocalDate anoCreacion, String sedePrincipal) {
+    public Marca(Integer id, String nombreMarca, String nit, String anoCreacion, String sedePrincipal) {
         this.id_marca = id;
         this.nombreMarca = nombreMarca;
         this.nit = nit;
-        this.anoCreacion = anoCreacion;
         this.sedePrincipal = sedePrincipal;
+        anoCreacion = anoCreacion;
     }
 
     public String getNombreMarca() {
@@ -48,11 +45,11 @@ public class Marca {
         this.nit = nit;
     }
 
-    public LocalDate getAnoCreacion() {
+    public String getAnoCreacion() {
         return anoCreacion;
     }
 
-    public void setAnoCreacion(LocalDate anoCreacion) {
+    public void setAnoCreacion(String anoCreacion) {
         this.anoCreacion = anoCreacion;
     }
 

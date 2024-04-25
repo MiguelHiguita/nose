@@ -2,8 +2,6 @@ package com.example.Store.modelos;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDateTime;
-
 @Entity
 @Table(name = "pedidos")
 public class Pedido {
